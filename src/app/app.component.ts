@@ -52,4 +52,16 @@ export class AppComponent implements AfterViewInit {
   onClickGroup(): void {
     console.log('Group was clicked');
   }
+
+  onClickPreviousPosition(): void {
+    console.log('Previous Position was clicked');
+  }
+
+  onClickCenterView(): void {
+    console.log('Center View was clicked');
+  }
+
+  onClickNextPosition(): void {
+    console.log('Next Position was clicked');
+  }
 }
