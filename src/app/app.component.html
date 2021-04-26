@@ -5,13 +5,23 @@
   <button class="buttonPlus buttonMin" (click)="onClickZoomOut()">
     <i class="material-icons">remove</i>
   </button>
-  <button (click)="onClickOpenDialog()">Open dialog</button>
 
   <button (click)="onClickPreviousPosition()">Previous Position</button>
   <button (click)="onClickCenterView()">Center</button>
   <button (click)="onClickNextPosition()">Next Position</button>
-  
-  
+
+  <div *ngFor="let position of positions">
+    <button
+      (click)="onClickPosition(position.id)"
+      [disabled]="position.disabled"
+    >
+      {{ position.id }}
+    </button>
+  </div>
+
+  <button (click)="onClickPosition('340d79e8-05f7-4275-83a7-0ad527e37615')">
+    Leipe SVG Unit hier
+  </button>
 
   <svg
     version="1.1"
