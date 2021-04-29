@@ -14,12 +14,12 @@ export class AppComponent implements AfterViewInit {
   readonly svgZoomFactor = 2
 ;
   readonly minZoom = 1;
-  readonly maxZoom = 15;
+  readonly maxZoom = 12;
 
   positions: Position[] = [
     {
       id: '340d79e8-05f7-4275-83a7-0ad527e37615',
-      iFrame: 'wikipedia.nl/bla/bla',
+      iFrame: 'https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&oldid=371683795',
       text: 'Intressante text',
       order: 0,
       x: 20,
@@ -108,13 +108,14 @@ export class AppComponent implements AfterViewInit {
   }
 
   onClickNextPosition(): void {
-    this.setDisabledStateForPositions();
+  
     this.currentPosition++;
-    const nextPosition = this.getCurrentPosition();
+    this.setDisabledStateForPositions();
   }
 
   onClickPreviousPosition(): void {
-    console.log('Previous Position was clicked');
+    this.currentPosition--;
+    this.setDisabledStateForPositions();
   }
 
   onClickCenterView(): void {
@@ -122,7 +123,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   /**
-   * This method gets the current position within the story (a position with a order).
+   * This method gets the current position within the story (a position with an order).
    */
   getCurrentPosition(): Position {
     const foundPositions = this.positions.filter(
@@ -159,6 +160,7 @@ export class AppComponent implements AfterViewInit {
     }
     // Enable knop (dus disabled = false)
     return false;
+    
   }
 
   setDisabledStateForPositions(): void {
