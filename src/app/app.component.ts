@@ -11,9 +11,10 @@ import { Position } from 'src/models/position';
 })
 export class AppComponent implements AfterViewInit {
   svgPanZoomMap: SvgPanZoom.Instance;
-  readonly svgZoomFactor = 0.2;
+  readonly svgZoomFactor = 2
+;
   readonly minZoom = 1;
-  readonly maxZoom = 3;
+  readonly maxZoom = 15;
 
   positions: Position[] = [
     {
@@ -67,7 +68,7 @@ export class AppComponent implements AfterViewInit {
         // console.log(oldPan, newPan);
       },
     };
-    this.svgPanZoomMap = SvgPanZoom('#smylos-map', svgPanZoomOptions);
+    this.svgPanZoomMap = SvgPanZoom('#thesisMap', svgPanZoomOptions);
   }
 
   onClickZoomIn(): void {
