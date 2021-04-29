@@ -6,20 +6,22 @@
     <i class="material-icons">remove</i>
   </button>
 
- 
+  <button class="buttonNavPrevious buttonNavInfo" (click)="onClickPreviousPosition()"><i class="material-icons">info</i></button>
 
-  <button class="buttonNavPrevious" (click)="onClickPreviousPosition()">Previous Position</button>
-  <button class="buttonNavPrevious buttonCenter" (click)="onClickCenterView()">Center</button>
-  <button class="buttonNavPrevious buttonNavNext" (click)="onClickNextPosition()">Next Position</button>
+  <button class="buttonNavPrevious" (click)="onClickPreviousPosition()"><i class="material-icons">chevron_left</i></button>
+  <button class="buttonNavPrevious buttonCenter" (click)="onClickCenterView()"><i class="material-icons">
+    my_location
+  </i></button>
+  <button class="buttonNavPrevious buttonNavNext" (click)="onClickNextPosition()"><i class="material-icons">chevron_right</i></button>
 
-  <div *ngFor="let position of positions">
+  <!-- <div *ngFor="let position of positions">
     <button
       (click)="onClickPosition(position.id)"
       [disabled]="position.disabled"
     >
       {{ position.id }}
     </button>
-  </div>
+  </div> -->
 
    
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="thesisMap" x="0px" y="0px"
