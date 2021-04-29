@@ -10,3 +10,66 @@
 .svg-group {
   cursor: pointer;
 }
+
+.buttonPlus {
+  position: fixed;
+  right: 50px;
+  bottom: 90px;
+  background-color: #09121e;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: white;
+  border: 2px solid;
+  border-color: #09121e;
+
+  &:hover {
+    border: 2px solid;
+    background-color: #36404f;
+    border-color: #36404f;
+  }
+
+  > i {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+.buttonMin {
+  right: 50px;
+  bottom: 30px;
+}
+
+.buttonNavPrevious {
+  position: fixed;
+  right: 55vw;
+  bottom: 30px;
+  background-color: #09121e;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: white;
+  border: 2px solid;
+  border-color: #09121e;
+
+  &:hover {
+    border: 2px solid;
+    background-color: #36404f;
+    border-color: #36404f;
+  }
+
+  > i {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+.buttonCenter {
+  right: 50vw;
+  bottom: 30px;
+}
+
+.buttonNavNext {
+  right: 45vw;
+  bottom: 30px;
+}

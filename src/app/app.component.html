@@ -8,9 +8,9 @@
 
  
 
-  <button (click)="onClickPreviousPosition()">Previous Position</button>
-  <button (click)="onClickCenterView()">Center</button>
-  <button (click)="onClickNextPosition()">Next Position</button>
+  <button class="buttonNavPrevious" (click)="onClickPreviousPosition()">Previous Position</button>
+  <button class="buttonNavPrevious buttonCenter" (click)="onClickCenterView()">Center</button>
+  <button class="buttonNavPrevious buttonNavNext" (click)="onClickNextPosition()">Next Position</button>
 
   <div *ngFor="let position of positions">
     <button
@@ -21,13 +21,7 @@
     </button>
   </div>
 
-  <button (click)="onClickPosition('340d79e8-05f7-4275-83a7-0ad527e37615')">
-    Leipe SVG Unit hier
-  </button>
-
-
-
-  
+   
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="thesisMap" x="0px" y="0px"
   viewBox="0 0 11429 9750" style="enable-background:new 0 0 11429 9750;" xml:space="preserve">
   >
