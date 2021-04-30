@@ -26,5 +26,6 @@ export class PopupComponent implements OnInit {
 }
 export interface DialogData {
   iFrame: string;
+  title: string;
   text: string;
 }

@@ -6,6 +6,19 @@ body {
   width: 100vw;
 }
 
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+p {
+  font-size: 16px;
+  color: white;
+  margin: 0px 100px 0px 40px;
+  font-family: 'Lora', serif;
+}
+
 html,
 body {
   height: 100%;
@@ -18,5 +31,5 @@ body {
 .mat-dialog-container {
   background: transparent !important;
   padding: 0 !important;
-  border-radius: 10px !important;
+  border-radius: 8px !important;
 }
