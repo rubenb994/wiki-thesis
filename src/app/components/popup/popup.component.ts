@@ -1,9 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-popup',
@@ -12,16 +9,20 @@ import {
 })
 export class PopupComponent implements OnInit {
   dialogData: DialogData;
+  iFrameUrl: SafeUrl;
 
   constructor(
     public dialogRef: MatDialogRef<PopupComponent>,
+    private domSanitizer: DomSanitizer,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {
     this.dialogData = data;
   }
 
   ngOnInit(): void {
-    // console.log(this.dialogData);
+    this.iFrameUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(
+      this.dialogData.iFrame
+    );
   }
 }
 export interface DialogData {

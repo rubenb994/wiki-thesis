@@ -1,19 +1,13 @@
 <div class="container">
   <!-- {{ data.iFrame }} -->
 
-
   <div class="row">
-    <button class="buttonClose" ><i class="material-icons">close</i></button>
+    <button class="buttonClose"><i class="material-icons">close</i></button>
     <div class="col-12 flex-container" id="container-1">
-
       <div class="flexRow flexFit">
         <div class="box" id="box-1">
           <div class="content">
-            <iframe
-              id="iframe"
-              src="https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&oldid=371683795"
-            >
-            </iframe>
+            <iframe id="iframe" *ngIf="iFrameUrl" [src]="iFrameUrl"> </iframe>
           </div>
         </div>
       </div>
