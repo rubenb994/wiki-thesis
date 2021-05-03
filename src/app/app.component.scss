@@ -51,11 +51,17 @@
   color: white;
   border: 2px solid;
   border-color: #09121e;
+  cursor: pointer;
 
   &:hover {
     border: 2px solid;
     background-color: #36404f;
     border-color: #36404f;
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: #09121e;
   }
 
   > i {

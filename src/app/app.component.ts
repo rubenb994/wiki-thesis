@@ -26,7 +26,7 @@ export class AppComponent implements AfterViewInit {
       order: 0,
       x: 20,
       y: 60,
-      disabled: false,
+      disabled: true,
     },
     {
       id: '2nb',
@@ -125,7 +125,9 @@ export class AppComponent implements AfterViewInit {
   ];
   currentPosition = 0;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) {
+    this.setDisabledStateForPositions();
+  }
 
   ngAfterViewInit(): void {
     const svgPanZoomOptions: SvgPanZoom.Options = {
@@ -194,6 +196,8 @@ export class AppComponent implements AfterViewInit {
     console.log('Center View was clicked');
   }
 
+  onClickInfo(): void {}
+
   /**
    * This method gets the current position within the story (a position with an order).
    */
@@ -224,7 +228,6 @@ export class AppComponent implements AfterViewInit {
 
   getPositionDisabledState(positionToCheck: Position): boolean {
     const currentPosition = this.getCurrentPosition();
-
     // Is the position we are checking large than the current position + 1 (which indicates the next possible position).
     if (positionToCheck.order > currentPosition.order + 1) {
       // Disable knop (dus disabled = true)

@@ -6,14 +6,15 @@
     <i class="material-icons">remove</i>
   </button>
 
-  <button
-    class="buttonNavPrevious buttonNavInfo"
-    (click)="onClickPreviousPosition()"
-  >
+  <button class="buttonNavPrevious buttonNavInfo" (click)="onClickInfo()">
     <i class="material-icons">info</i>
   </button>
 
-  <button class="buttonNavPrevious" (click)="onClickPreviousPosition()">
+  <button
+    class="buttonNavPrevious"
+    (click)="onClickPreviousPosition()"
+    [disabled]="currentPosition === 0"
+  >
     <i class="material-icons">chevron_left</i>
   </button>
   <button class="buttonNavPrevious buttonCenter" (click)="onClickCenterView()">
@@ -22,6 +23,7 @@
   <button
     class="buttonNavPrevious buttonNavNext"
     (click)="onClickNextPosition()"
+    [disabled]="currentPosition === positions.length - 1"
   >
     <i class="material-icons">chevron_right</i>
   </button>
