@@ -123,7 +123,7 @@ export class AppComponent implements AfterViewInit {
       disabled: true,
     },
   ];
-  currentPosition = 0;
+  currentPosition = 4;
 
   constructor(private dialog: MatDialog) {
     this.setDisabledStateForPositions();
@@ -164,11 +164,13 @@ export class AppComponent implements AfterViewInit {
 
   onClickPosition(id: string): void {
     const clickedPosition = this.getPositionForId(id);
-    console.log(clickedPosition);
     const currentPosition = this.getCurrentPosition();
 
     // Check if the clicked position is the next position.
-    if (clickedPosition.order === currentPosition.order + 1) {
+    if (
+      currentPosition.order &&
+      clickedPosition.order === currentPosition.order + 1
+    ) {
       // Yes
       this.onClickNextPosition();
     }
@@ -193,10 +195,51 @@ export class AppComponent implements AfterViewInit {
   }
 
   onClickCenterView(): void {
-    console.log('Center View was clicked');
+    // Wat is de current positions
+    const currentPosition = this.getCurrentPosition();
+    // Haal HTML element op voor current position
+    const positionElement = document.getElementById(
+      `position-${currentPosition.order}`
+    );
+    // Zoom element naar center
+    this.panElementToCenter(positionElement);
   }
 
   onClickInfo(): void {}
+
+  positionVisible(order: number): boolean {
+    return this.currentPosition + 1 >= order;
+  }
+
+  panElementToCenter(element: HTMLElement): void {
+    const body = document.body;
+    const bodyPositonInfo = body.getBoundingClientRect();
+    const elementPositionInfo = element.getBoundingClientRect();
+
+    const xToMove = bodyPositonInfo.width / 2 - elementPositionInfo.x;
+    const yToMove = bodyPositonInfo.height / 2 - elementPositionInfo.y;
+    this.customPanBy({ x: xToMove, y: yToMove });
+  }
+
+  customPanBy(amount): void {
+    // {x: 1, y: 2}
+    var animationTime = 300, // ms
+      animationStepTime = 15, // one frame per 30 ms
+      animationSteps = animationTime / animationStepTime,
+      animationStep = 0,
+      intervalID = null,
+      stepX = amount.x / animationSteps,
+      stepY = amount.y / animationSteps;
+    const svgPanZoomMapCopy = this.svgPanZoomMap;
+    intervalID = setInterval(() => {
+      if (animationStep++ < animationSteps) {
+        svgPanZoomMapCopy.panBy({ x: stepX, y: stepY });
+      } else {
+        // Cancel interval
+        clearInterval(intervalID);
+      }
+    }, animationStepTime);
+  }
 
   /**
    * This method gets the current position within the story (a position with an order).

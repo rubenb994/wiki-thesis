@@ -24,6 +24,10 @@ export class PopupComponent implements OnInit {
       this.dialogData.iFrame
     );
   }
+
+  onClickClosePopup(): void {
+    this.dialogRef.close();
+  }
 }
 export interface DialogData {
   iFrame: string;
