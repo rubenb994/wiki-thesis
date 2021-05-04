@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   color: white;
 }
@@ -16,7 +16,7 @@ p {
   font-size: 16px;
   color: white;
   margin: 0px 100px 0px 40px;
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
 }
 
 html,
@@ -32,4 +32,32 @@ body {
   background: transparent !important;
   padding: 0 !important;
   border-radius: 8px !important;
+}
+
+.button {
+  position: fixed;
+  background-color: #09121e;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  color: white;
+  border: 2px solid;
+  border-color: #09121e;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid;
+    background-color: #36404f;
+    border-color: #36404f;
+  }
+
+  > i {
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: #09121e;
+  }
 }

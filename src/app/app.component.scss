@@ -12,27 +12,8 @@
 }
 
 .buttonPlus {
-  position: fixed;
   right: 50px;
   bottom: 90px;
-  background-color: #09121e;
-  height: 44px;
-  width: 44px;
-  border-radius: 50%;
-  color: white;
-  border: 2px solid;
-  border-color: #09121e;
-
-  &:hover {
-    border: 2px solid;
-    background-color: #36404f;
-    border-color: #36404f;
-  }
-
-  > i {
-    vertical-align: middle;
-    text-align: center;
-  }
 }
 
 .buttonMin {
@@ -41,33 +22,8 @@
 }
 
 .buttonNavPrevious {
-  position: fixed;
   right: 55vw;
   bottom: 30px;
-  background-color: #09121e;
-  height: 44px;
-  width: 44px;
-  border-radius: 50%;
-  color: white;
-  border: 2px solid;
-  border-color: #09121e;
-  cursor: pointer;
-
-  &:hover {
-    border: 2px solid;
-    background-color: #36404f;
-    border-color: #36404f;
-  }
-
-  &:disabled {
-    cursor: default;
-    background-color: #09121e;
-  }
-
-  > i {
-    vertical-align: middle;
-    align-items: center;
-  }
 }
 
 .buttonCenter {

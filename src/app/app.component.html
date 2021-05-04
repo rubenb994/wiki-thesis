@@ -1,27 +1,27 @@
 <div class="map-container">
-  <button class="buttonPlus" (click)="onClickZoomIn()">
+  <button class="button buttonPlus" (click)="onClickZoomIn()">
     <i class="material-icons">add</i>
   </button>
-  <button class="buttonPlus buttonMin" (click)="onClickZoomOut()">
+  <button class="button buttonMin" (click)="onClickZoomOut()">
     <i class="material-icons">remove</i>
   </button>
 
-  <button class="buttonNavPrevious buttonNavInfo" (click)="onClickInfo()">
+  <button class="button buttonNavInfo" (click)="onClickInfo()">
     <i class="material-icons">info</i>
   </button>
 
   <button
-    class="buttonNavPrevious"
+    class="button buttonNavPrevious"
     (click)="onClickPreviousPosition()"
     [disabled]="currentPosition === 0"
   >
     <i class="material-icons">chevron_left</i>
   </button>
-  <button class="buttonNavPrevious buttonCenter" (click)="onClickCenterView()">
+  <button class="button buttonCenter" (click)="onClickCenterView()">
     <i class="material-icons"> my_location </i>
   </button>
   <button
-    class="buttonNavPrevious buttonNavNext"
+    class="button buttonNavNext"
     (click)="onClickNextPosition()"
     [disabled]="currentPosition === positions.length - 1"
   >
