@@ -4,13 +4,7 @@
       <i class="material-icons">close</i>
     </button>
     <div class="col-12 flex-container" id="container-1">
-      <div class="flexRow flexFit">
-        <div class="box" id="box-1">
-          <div class="content">
-            <iframe id="iframe" *ngIf="iFrameUrl" [src]="iFrameUrl"> </iframe>
-          </div>
-        </div>
-      </div>
+      
 
       <div class="flexRow">
         <div class="box" id="box-3">
@@ -22,6 +16,13 @@
             <p>
               {{ data.text }}
             </p>
+          </div>
+        </div>
+      </div>
+      <div class="flexRow flexFit">
+        <div class="box" id="box-1">
+          <div class="content">
+            <iframe id="iframe" *ngIf="iFrameUrl" [src]="iFrameUrl"> </iframe>
           </div>
         </div>
       </div>
