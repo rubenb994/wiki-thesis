@@ -122,6 +122,54 @@ export class AppComponent implements AfterViewInit {
       y: 333,
       disabled: true,
     },
+    {
+      id: '11cb99aa-9cc5-437c-98a7-fcf7364a6bda',
+      title: 'ARCHIVE 2',
+      iFrame:
+        'https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&oldid=371683795',
+      text:
+        'This article was signed up for deletion quickly after it was created. This process means that for a certain period of time, people can vote to delete the page or keep it online. On discussion map, this part of the discussion is highlighted. It was later removed and achieved when the decision was made to keep the article online. Several times later, the deletion process was posed again but rejected due to having passed this trajectory before. ',
+      order: 8,
+      x: 6660,
+      y: 333,
+      disabled: true,
+    },
+    {
+      id: '55c57baa-7fc5-4d39-a4bc-dd29ef9ccc64',
+      title: 'ARCHIVE 1',
+      iFrame:
+        'https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&oldid=371683795',
+      text:
+        'This article was signed up for deletion quickly after it was created. This process means that for a certain period of time, people can vote to delete the page or keep it online. On discussion map, this part of the discussion is highlighted. It was later removed and achieved when the decision was made to keep the article online. Several times later, the deletion process was posed again but rejected due to having passed this trajectory before. ',
+      order: 8,
+      x: 6660,
+      y: 333,
+      disabled: true,
+    },
+    {
+      id: '1e537d9f-9733-4d63-80eb-cb511cb74757',
+      title: 'CURRENT TALK PAGE',
+      iFrame:
+        'https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&oldid=371683795',
+      text:
+        'This article was signed up for deletion quickly after it was created. This process means that for a certain period of time, people can vote to delete the page or keep it online. On discussion map, this part of the discussion is highlighted. It was later removed and achieved when the decision was made to keep the article online. Several times later, the deletion process was posed again but rejected due to having passed this trajectory before. ',
+      order: 8,
+      x: 6660,
+      y: 333,
+      disabled: true,
+    },
+    {
+      id: 'e23f5176-3528-4d7b-bc26-6c2c8525e556',
+      title: 'DELETED',
+      iFrame:
+        'https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&oldid=371683795',
+      text:
+        'This article was signed up for deletion quickly after it was created. This process means that for a certain period of time, people can vote to delete the page or keep it online. On discussion map, this part of the discussion is highlighted. It was later removed and achieved when the decision was made to keep the article online. Several times later, the deletion process was posed again but rejected due to having passed this trajectory before. ',
+      order: 8,
+      x: 6660,
+      y: 333,
+      disabled: true,
+    },
   ];
   currentPosition = 0;
 
@@ -187,11 +235,27 @@ export class AppComponent implements AfterViewInit {
   onClickNextPosition(): void {
     this.currentPosition++;
     this.setDisabledStateForPositions();
+        // Wat is de current positions
+        const currentPosition = this.getCurrentPosition();
+        // Haal HTML element op voor current position
+        const positionElement = document.getElementById(
+          `position-${currentPosition.order}`
+        );
+        // Zoom element naar center
+        this.panElementToCenter(positionElement);
   }
 
   onClickPreviousPosition(): void {
     this.currentPosition--;
     this.setDisabledStateForPositions();
+            // Wat is de current positions
+            const currentPosition = this.getCurrentPosition();
+            // Haal HTML element op voor current position
+            const positionElement = document.getElementById(
+              `position-${currentPosition.order}`
+            );
+            // Zoom element naar center
+            this.panElementToCenter(positionElement);
   }
 
   onClickCenterView(): void {
