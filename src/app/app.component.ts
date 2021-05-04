@@ -123,7 +123,7 @@ export class AppComponent implements AfterViewInit {
       disabled: true,
     },
   ];
-  currentPosition = 4;
+  currentPosition = 0;
 
   constructor(private dialog: MatDialog) {
     this.setDisabledStateForPositions();
