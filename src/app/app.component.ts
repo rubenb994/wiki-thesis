@@ -14,7 +14,7 @@ export class AppComponent implements AfterViewInit {
   svgPanZoomMap: SvgPanZoom.Instance;
   readonly svgZoomFactor = 2;
   readonly minZoom = 1;
-  readonly maxZoom = 10;
+  readonly maxZoom = 15;
 
   positions: Position[] = [
     {
