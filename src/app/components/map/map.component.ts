@@ -14,7 +14,6 @@ export class MapComponent implements AfterViewInit {
   readonly svgZoomFactor = 2;
   readonly minZoom = 1;
   readonly maxZoom = 15;
-  0;
   public progression = 0;
 
   positions: Position[] = [
@@ -202,7 +201,7 @@ export class MapComponent implements AfterViewInit {
   onClickPosition(id: string): void {
     const clickedPosition = this.getPositionForId(id);
     const currentPosition = this.getCurrentPosition();
-
+    console.log(currentPosition, this.currentPosition);
     // Check if the clicked position is the next position.
     if (
       currentPosition.order &&
@@ -221,7 +220,12 @@ export class MapComponent implements AfterViewInit {
       },
     });
 
-    dialogRef.afterClosed().subscribe(() => {
+    dialogRef.afterClosed().subscribe((result) => {
+      const firstId = 'e4fff7aa-1fb9-46d5-adda-72c58b3b2b8e';
+      if (result == firstId) {
+        this.currentPosition++;
+      }
+
       this.getProgressionForProgressionBar();
     });
   }
