@@ -5,6 +5,7 @@ import { PopupComponent } from './components/popup/popup.component';
 import { Position } from 'src/models/position';
 import { hostViewClassName } from '@angular/compiler';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,6 +16,8 @@ export class AppComponent implements AfterViewInit {
   readonly svgZoomFactor = 2;
   readonly minZoom = 1;
   readonly maxZoom = 15;
+0
+public progression = 0;
 
   positions: Position[] = [
     {
@@ -162,6 +165,8 @@ export class AppComponent implements AfterViewInit {
     this.setDisabledStateForPositions();
   }
 
+
+
   ngAfterViewInit(): void {
     
     const svgPanZoomOptions: SvgPanZoom.Options = {
@@ -178,6 +183,8 @@ export class AppComponent implements AfterViewInit {
     
     this.svgPanZoomMap = SvgPanZoom('#thesisMap', svgPanZoomOptions);
     this.svgPanZoomMap.zoom(3);
+  
+
   }
 
   onClickZoomIn(): void {
@@ -257,6 +264,7 @@ export class AppComponent implements AfterViewInit {
     );
     // Zoom element naar center
     this.panElementToCenter(positionElement);
+    this.getProgressionForProgressionBar();
   }
 
   onClickInfo(): void {}
@@ -339,4 +347,14 @@ export class AppComponent implements AfterViewInit {
       position.disabled = this.getPositionDisabledState(position);
     });
   }
+
+ 
+  
+  getProgressionForProgressionBar(): void {
+    const currentPosition = this.getCurrentPosition();
+    this.progression = 100 * currentPosition.order /7;
+    console.log(this.progression);
+}
+
+
 }

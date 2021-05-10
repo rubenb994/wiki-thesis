@@ -28,6 +28,10 @@
     <i class="material-icons">chevron_right</i>
   </button>
 
+  <div id="progressBar">
+	<div id="progress" [ngStyle]="{'width': progression + '%'}"></div>
+</div>
+
   <!-- <div *ngFor="let position of positions">
     <button
       (click)="onClickPosition(position.id)"
