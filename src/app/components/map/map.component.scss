@@ -1,0 +1,88 @@
+.map-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  #thesisMap {
+    flex: 1;
+  }
+}
+
+.map-container,
+#thesisMap {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.svg-group {
+  cursor: pointer;
+}
+
+.buttonPlus {
+  right: 50px;
+  bottom: 90px;
+}
+
+.buttonMin {
+  right: 50px;
+  bottom: 30px;
+}
+
+.buttonNavPrevious {
+  right: 55vw;
+  bottom: 30px;
+}
+
+.buttonCenter {
+  right: 50vw;
+  bottom: 30px;
+}
+
+.buttonNavNext {
+  right: 45vw;
+  bottom: 30px;
+}
+
+.buttonNavInfo {
+  left: 50px;
+  bottom: 30px;
+}
+
+.st5 {
+  fill: #e21607;
+
+  &:hover {
+    fill: #00c7ff;
+  }
+}
+
+#progressBar {
+  background-color: white;
+  border: 2px solid;
+  border-color: blue;
+  height: 15px;
+  width: 150px;
+  border-radius: 12px;
+  color: blue;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#progress {
+  content: "";
+  display: block;
+  background: red;
+  width: 100%;
+  transition: "width 1s";
+  transition-timing-function: ease;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.mat-progress-bar {
+  height: 10px;
+}
