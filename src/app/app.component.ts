@@ -5,7 +5,6 @@ import { PopupComponent } from './components/popup/popup.component';
 import { Position } from 'src/models/position';
 import { hostViewClassName } from '@angular/compiler';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,15 +15,17 @@ export class AppComponent implements AfterViewInit {
   readonly svgZoomFactor = 2;
   readonly minZoom = 1;
   readonly maxZoom = 15;
-0
-public progression = 0;
+  0;
+  public progression = 0;
 
   positions: Position[] = [
     {
       id: 'e4fff7aa-1fb9-46d5-adda-72c58b3b2b8e',
-      iFrame: 'https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&oldid=371683795',
+      iFrame:
+        'https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&oldid=371683795',
       title: 'FIRST PAGE',
-      text: 'On July 4th, 2010, editor name Melchior copied his original version of the page from the Wikipedia trial editor and created the page: Toilet paper orientation. Back then, Melchior was already an established Wikipedia with quite a list of edits under his name. As you can see in the window where the original page is displayed, the article was already quite substantial and well sourced.',
+      text:
+        'On July 4th, 2010, editor name Melchior copied his original version of the page from the Wikipedia trial editor and created the page: Toilet paper orientation. Back then, Melchior was already an established Wikipedia with quite a list of edits under his name. As you can see in the window where the original page is displayed, the article was already quite substantial and well sourced.',
       order: 0,
       x: 5,
       y: 600,
@@ -45,8 +46,7 @@ public progression = 0;
     {
       id: '84f0594f-af34-49ad-979c-9eb05b4ad23e',
       title: 'COMMUNITY',
-      iFrame:
-        'https://en.wikipedia.org/wiki/Talk:Toilet_paper_orientation',
+      iFrame: 'https://en.wikipedia.org/wiki/Talk:Toilet_paper_orientation',
       text:
         'On Wikipedia, every page has a dedicated discussion page that can be found in tabs on the top left of the page. The structure of this page is exactly the same: everyone can write, and every edit is saved and kept in the history page. The difference is its use, editors share their opinions, ask questions, and motivate their actions if necessary. As you can see, the discussion page of this article contains heavy debate about whether this should be on Wikipedia or not. ',
       order: 2,
@@ -139,8 +139,7 @@ public progression = 0;
     {
       id: '1e537d9f-9733-4d63-80eb-cb511cb74757',
       title: 'CURRENT TALK PAGE',
-      iFrame:
-        'https://en.wikipedia.org/wiki/Talk:Toilet_paper_orientation',
+      iFrame: 'https://en.wikipedia.org/wiki/Talk:Toilet_paper_orientation',
       text:
         'This article was signed up for deletion quickly after it was created. This process means that for a certain period of time, people can vote to delete the page or keep it online. On discussion map, this part of the discussion is highlighted. It was later removed and achieved when the decision was made to keep the article online. Several times later, the deletion process was posed again but rejected due to having passed this trajectory before. ',
       x: 6660,
@@ -165,10 +164,7 @@ public progression = 0;
     this.setDisabledStateForPositions();
   }
 
-
-
   ngAfterViewInit(): void {
-    
     const svgPanZoomOptions: SvgPanZoom.Options = {
       maxZoom: this.maxZoom,
       minZoom: this.minZoom,
@@ -177,14 +173,11 @@ public progression = 0;
       beforePan: (oldPan, newPan) => {
         // console.log(oldPan, newPan);
       },
-      
     };
     this.onClickPosition('e4fff7aa-1fb9-46d5-adda-72c58b3b2b8e');
-    
+
     this.svgPanZoomMap = SvgPanZoom('#thesisMap', svgPanZoomOptions);
     this.svgPanZoomMap.zoom(3);
-  
-
   }
 
   onClickZoomIn(): void {
@@ -232,27 +225,27 @@ public progression = 0;
   onClickNextPosition(): void {
     this.currentPosition++;
     this.setDisabledStateForPositions();
-        // Wat is de current positions
-        const currentPosition = this.getCurrentPosition();
-        // Haal HTML element op voor current position
-        const positionElement = document.getElementById(
-          `position-${currentPosition.order}`
-        );
-        // Zoom element naar center
-        this.panElementToCenter(positionElement);
+    // Wat is de current positions
+    const currentPosition = this.getCurrentPosition();
+    // Haal HTML element op voor current position
+    const positionElement = document.getElementById(
+      `position-${currentPosition.order}`
+    );
+    // Zoom element naar center
+    this.panElementToCenter(positionElement);
   }
 
   onClickPreviousPosition(): void {
     this.currentPosition--;
     this.setDisabledStateForPositions();
-            // Wat is de current positions
-            const currentPosition = this.getCurrentPosition();
-            // Haal HTML element op voor current position
-            const positionElement = document.getElementById(
-              `position-${currentPosition.order}`
-            );
-            // Zoom element naar center
-            this.panElementToCenter(positionElement);
+    // Wat is de current positions
+    const currentPosition = this.getCurrentPosition();
+    // Haal HTML element op voor current position
+    const positionElement = document.getElementById(
+      `position-${currentPosition.order}`
+    );
+    // Zoom element naar center
+    this.panElementToCenter(positionElement);
   }
 
   onClickCenterView(): void {
@@ -349,13 +342,16 @@ public progression = 0;
   }
 
   getProgressionForProgressionBar(): void {
-    const storyPositions = this.positions.filter(
-      (position) => position.order
-    );
+    const storyPositions = this.positions.filter((position) => position.order);
     const currentPosition = this.getCurrentPosition();
-    this.progression = 100 * currentPosition.order / storyPositions.length;
-    
-}
+    this.progression = (100 * currentPosition.order) / storyPositions.length;
+  }
 
-
+  getPostitionsWithOrderLength(): number {
+    const storyPositions = this.positions.filter((position) => position.order);
+    if (!storyPositions) {
+      throw new Error('Story postions are not present.');
+    }
+    return storyPositions.length;
+  }
 }
