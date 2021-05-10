@@ -1,3 +1,13 @@
+.map-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  #thesisMap {
+    flex: 1;
+  }
+}
+
 .map-container,
 #thesisMap {
   width: 100%;
