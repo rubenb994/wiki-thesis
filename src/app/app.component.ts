@@ -264,7 +264,6 @@ public progression = 0;
     );
     // Zoom element naar center
     this.panElementToCenter(positionElement);
-    this.getProgressionForProgressionBar();
   }
 
   onClickInfo(): void {}
@@ -346,14 +345,16 @@ public progression = 0;
     this.positions.forEach((position) => {
       position.disabled = this.getPositionDisabledState(position);
     });
+    this.getProgressionForProgressionBar();
   }
 
- 
-  
   getProgressionForProgressionBar(): void {
+    const storyPositions = this.positions.filter(
+      (position) => position.order
+    );
     const currentPosition = this.getCurrentPosition();
-    this.progression = 100 * currentPosition.order /7;
-    console.log(this.progression);
+    this.progression = 100 * currentPosition.order / storyPositions.length;
+    
 }
 
 
