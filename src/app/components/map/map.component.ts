@@ -3,6 +3,7 @@ import * as SvgPanZoom from 'svg-pan-zoom';
 import { MatDialog } from '@angular/material/dialog';
 import { Position } from 'src/models/position';
 import { PopupComponent } from '../popup/popup.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-map',
@@ -158,7 +159,7 @@ export class MapComponent implements AfterViewInit {
   ];
   currentPosition = 0;
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog, private router: Router) {
     this.setDisabledStateForPositions();
   }
 
@@ -223,8 +224,12 @@ export class MapComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       const firstId = 'e4fff7aa-1fb9-46d5-adda-72c58b3b2b8e';
+      const lastId = 'a885e148-9fb2-4302-b92d-042e6dbbc128';
       if (result == firstId) {
         this.currentPosition++;
+      }
+      if (result == lastId) {
+        this.toOutro();
       }
 
       this.getProgressionForProgressionBar();
@@ -275,6 +280,7 @@ export class MapComponent implements AfterViewInit {
     );
     // Zoom element naar center
     this.panElementToCenter(positionElement);
+    this.toOutro();
   }
 
   onClickInfo(): void {}
@@ -371,4 +377,12 @@ export class MapComponent implements AfterViewInit {
     }
     return storyPositions.length;
   }
+
+  toOutro(): void {
+    setTimeout (() => {
+      this.router.navigate(['outro']);;
+   }, 500);
+   
+  }
+  
 }
