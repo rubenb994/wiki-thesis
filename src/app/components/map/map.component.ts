@@ -120,7 +120,7 @@ export class MapComponent implements AfterViewInit {
       iFrame:
         'https://en.wikipedia.org/wiki/Talk:Toilet_paper_orientation/Archive_2',
       text:
-        'This article was signed up for deletion quickly after it was created. This process means that for a certain period of time, people can vote to delete the page or keep it online. On discussion map, this part of the discussion is highlighted. It was later removed and achieved when the decision was made to keep the article online. Several times later, the deletion process was posed again but rejected due to having passed this trajectory before. ',
+        'On the 13th of July 2015, SilkTork achieved most of the talk page’s discussion for the second time. The archived discussion is no longer open for participation and includes threads that have reached consensus. Separating it from the active threads helps to organize the discussion. The toilet paper orientation article has evoked so much discussion that over its existence, the page has been archived twice as can be seen in the map. ',
       x: 6660,
       y: 333,
       disabled: true,
@@ -131,7 +131,7 @@ export class MapComponent implements AfterViewInit {
       iFrame:
         'https://en.wikipedia.org/wiki/Talk:Toilet_paper_orientation/Archive_1',
       text:
-        'This article was signed up for deletion quickly after it was created. This process means that for a certain period of time, people can vote to delete the page or keep it online. On discussion map, this part of the discussion is highlighted. It was later removed and achieved when the decision was made to keep the article online. Several times later, the deletion process was posed again but rejected due to having passed this trajectory before. ',
+        'On the 9th of August 2010, SilkTork achieved most of the talk page’s discussion. The archived discussion is no longer open for participation and includes threads that have reached consensus. Separating it from the active threads helps to organize the discussion. The toilet paper orientation article has evoked so much discussion that over its existence, the page has been archived twice as can be seen in the map. ',
       x: 6660,
       y: 333,
       disabled: true,
@@ -141,7 +141,7 @@ export class MapComponent implements AfterViewInit {
       title: 'CURRENT TALK PAGE',
       iFrame: 'https://en.wikipedia.org/wiki/Talk:Toilet_paper_orientation',
       text:
-        'This article was signed up for deletion quickly after it was created. This process means that for a certain period of time, people can vote to delete the page or keep it online. On discussion map, this part of the discussion is highlighted. It was later removed and achieved when the decision was made to keep the article online. Several times later, the deletion process was posed again but rejected due to having passed this trajectory before. ',
+        'The map of this project is a graphical representation of all the debate that ever took place on the talk page of the article on toilet paper orientation until the 1st of February 2021. Of course, this debate is ongoing. The window below shows a real-time version of the talk page.  As you can see, the threads are hard to distinguish and can be easier explored on the map of this web project.',
       x: 6660,
       y: 333,
       disabled: true,
@@ -150,9 +150,9 @@ export class MapComponent implements AfterViewInit {
       id: 'e23f5176-3528-4d7b-bc26-6c2c8525e556',
       title: 'DELETED',
       iFrame:
-        'https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&oldid=371683795',
+        'https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&action=history',
       text:
-        'This article was signed up for deletion quickly after it was created. This process means that for a certain period of time, people can vote to delete the page or keep it online. On discussion map, this part of the discussion is highlighted. It was later removed and achieved when the decision was made to keep the article online. Several times later, the deletion process was posed again but rejected due to having passed this trajectory before. ',
+        'The threads in this section have been deleted. That means that they can not be found in either the archive or on the current talk page. However, Wikipedia pages have a history log which still contains all edits ever made. Manually going through the list brought up the deleted threads shown here. ',
       x: 6660,
       y: 333,
       disabled: true,
