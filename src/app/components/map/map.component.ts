@@ -384,5 +384,9 @@ export class MapComponent implements AfterViewInit {
    }, 500);
    
   }
+
+  onClickGoToIntro(): void {
+    this.router.navigate(['intro']);
+  }
   
 }
