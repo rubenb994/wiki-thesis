@@ -208,7 +208,8 @@ export class MapComponent implements AfterViewInit {
       clickedPosition.order === currentPosition.order + 1
     ) {
       // Yes
-      this.onClickNextPosition();
+      this.currentPosition++;
+    this.setDisabledStateForPositions();
     }
     // Open popup
     const dialogRef = this.dialog.open(PopupComponent, {
@@ -241,6 +242,11 @@ export class MapComponent implements AfterViewInit {
     );
     // Zoom element naar center
     this.panElementToCenter(positionElement);
+    // Open popup
+    setTimeout (() => {
+      this.onClickPosition(currentPosition.id);
+   }, 700);
+   
   }
 
   onClickPreviousPosition(): void {
@@ -254,6 +260,10 @@ export class MapComponent implements AfterViewInit {
     );
     // Zoom element naar center
     this.panElementToCenter(positionElement);
+        // Open popup
+        setTimeout (() => {
+          this.onClickPosition(currentPosition.id);
+       }, 700);
   }
 
   onClickCenterView(): void {
