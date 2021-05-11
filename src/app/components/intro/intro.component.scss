@@ -1,5 +1,5 @@
 .container {
-  background-color: #1e2733;
+  background-color: #09121e;
   width: 100vw;
   height: 100vh;
 }
@@ -15,6 +15,7 @@
   transform: translate(-50%, -50%);
   padding: 50px;
   border: 5px solid #00c7ff;
+  border-radius: 8px;
 }
 
 #thesisLogo {
@@ -22,22 +23,15 @@
 }
 
 .introButton {
-  background-color: #09121e;
-
-  color: white;
-  border: 2px solid;
-  border-color: #09121e;
+  background-color: #862eff;
+  border-radius: 8px;
+  padding: 0px 20px 0px 20px;
+  border: 0px solid;
   cursor: pointer;
 
   &:hover {
-    border: 2px solid;
+    border: 0px solid;
     background-color: #36404f;
-    border-color: #36404f;
-  }
-
-  > i {
-    vertical-align: middle;
-    text-align: center;
   }
 }
 
