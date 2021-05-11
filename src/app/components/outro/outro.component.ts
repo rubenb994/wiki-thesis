@@ -15,6 +15,7 @@ export class OutroComponent implements OnInit {
 
   onClickGoToMap(): void {
     this.router.navigate(['map']);
+    localStorage.clear();
   }
 
 }

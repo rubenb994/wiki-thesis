@@ -16,6 +16,7 @@ export class MapComponent implements AfterViewInit {
   readonly minZoom = 1;
   readonly maxZoom = 15;
   public progression = 0;
+  public currentPositionLocalStorage = 'currentPosition';
 
   positions: Position[] = [
     {
@@ -159,6 +160,8 @@ export class MapComponent implements AfterViewInit {
   ];
   currentPosition = 0;
 
+  
+
   constructor(private dialog: MatDialog, private router: Router) {
     this.setDisabledStateForPositions();
   }
@@ -173,10 +176,22 @@ export class MapComponent implements AfterViewInit {
         // console.log(oldPan, newPan);
       },
     };
-    this.onClickPosition('e4fff7aa-1fb9-46d5-adda-72c58b3b2b8e');
 
     this.svgPanZoomMap = SvgPanZoom('#thesisMap', svgPanZoomOptions);
     this.svgPanZoomMap.zoom(3);
+    //localStorage.clear();
+    var storage = localStorage.getItem("currentPosition"); 
+   
+    if ( storage !== null ) {
+      const numberPosition = parseFloat(storage);
+      this.currentPosition = numberPosition;
+    } 
+    else {
+      this.currentPosition = 0;
+      this.onClickPosition('e4fff7aa-1fb9-46d5-adda-72c58b3b2b8e');
+    }
+  
+    this.getProgressionForProgressionBar();
   }
 
   onClickZoomIn(): void {
@@ -210,6 +225,8 @@ export class MapComponent implements AfterViewInit {
     ) {
       // Yes
       this.currentPosition++;
+      localStorage.setItem(this.currentPositionLocalStorage, this.currentPosition.toString());  
+      
     this.setDisabledStateForPositions();
     }
     // Open popup
@@ -227,6 +244,7 @@ export class MapComponent implements AfterViewInit {
       const lastId = 'a885e148-9fb2-4302-b92d-042e6dbbc128';
       if (result == firstId) {
         this.currentPosition++;
+        localStorage.setItem(this.currentPositionLocalStorage, this.currentPosition.toString());  
       }
       if (result == lastId) {
         this.toOutro();
@@ -238,6 +256,7 @@ export class MapComponent implements AfterViewInit {
 
   onClickNextPosition(): void {
     this.currentPosition++;
+    localStorage.setItem(this.currentPositionLocalStorage, this.currentPosition.toString());  
     this.setDisabledStateForPositions();
     // Wat is de current positions
     const currentPosition = this.getCurrentPosition();
@@ -256,6 +275,7 @@ export class MapComponent implements AfterViewInit {
 
   onClickPreviousPosition(): void {
     this.currentPosition--;
+    localStorage.setItem(this.currentPositionLocalStorage, this.currentPosition.toString());  
     this.setDisabledStateForPositions();
     // Wat is de current positions
     const currentPosition = this.getCurrentPosition();
@@ -280,7 +300,7 @@ export class MapComponent implements AfterViewInit {
     );
     // Zoom element naar center
     this.panElementToCenter(positionElement);
-    this.toOutro();
+    console.log(currentPosition.order);
   }
 
   onClickInfo(): void {}
