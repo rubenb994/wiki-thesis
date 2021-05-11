@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-outro',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
+  }
+
+  onClickGoToMap(): void {
+    this.router.navigate(['map']);
   }
 
 }
