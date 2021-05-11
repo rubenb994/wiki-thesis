@@ -63,6 +63,7 @@ p {
 
 .buttonClose {
   z-index: +1;
+  transform: translate(-30px, -14px);
   height: 44px;
   width: 44px;
   outline: none;
@@ -77,4 +78,8 @@ p {
   border-left: 6px solid #00c7ff;
   flex: 1;
   margin-left: 30px;
+}
+
+.btn-text-right {
+  text-align: right;
 }
