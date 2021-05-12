@@ -25,7 +25,7 @@ export class MapComponent implements AfterViewInit {
         'https://en.wikipedia.org/w/index.php?title=Toilet_paper_orientation&oldid=371683795',
       title: 'FIRST PAGE',
       text:
-        'On July 4th, 2010, editor name Melchior copied his original version of the page from the Wikipedia trial editor and created the page: Toilet paper orientation. Back then, Melchior was already an established Wikipedia with quite a list of edits under his name. As you can see in the window where the original page is displayed, the article was already quite substantial and well sourced.',
+        'On July 4th, 2010, editor name Melchior copied his original version of the page from the Wikipedia trial editor and created the page: Toilet paper orientation. Back then, Melchior was already an established Wikipedian with quite a list of edits under his name. As you can see in the window where the original page is displayed, the article was already quite substantial and well sourced.',
       order: 0,
       x: 5,
       y: 600,
